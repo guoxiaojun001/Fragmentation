@@ -68,7 +68,7 @@ public class MainActivity extends SupportActivity
         mNavigationView.setNavigationItemSelectedListener(this);
         mNavigationView.setCheckedItem(R.id.nav_home);
 
-        LinearLayout llNavHeader = (LinearLayout) mNavigationView.getHeaderView(0);
+        LinearLayout llNavHeader = (LinearLayout) mNavigationView.inflateHeaderView(R.layout.nav_header_main);
         mTvName = (TextView) llNavHeader.findViewById(R.id.tv_name);
         mImgNav = (ImageView) llNavHeader.findViewById(R.id.img_nav);
         llNavHeader.setOnClickListener(new View.OnClickListener() {
