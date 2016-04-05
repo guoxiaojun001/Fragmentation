@@ -26,7 +26,8 @@ import me.yokeyword.sample.ui.fragment.shop.ShopFragment;
  * Created by YoKeyword on 16/1/29.
  */
 public class MainActivity extends SupportActivity
-        implements NavigationView.OnNavigationItemSelectedListener, BaseMainFragment.OnFragmentOpenDrawerListener
+        implements NavigationView.OnNavigationItemSelectedListener,
+        BaseMainFragment.OnFragmentOpenDrawerListener
         , LoginFragment.OnLoginSuccessListener {
     public static final String TAG = MainActivity.class.getSimpleName();
 
@@ -68,10 +69,10 @@ public class MainActivity extends SupportActivity
         mNavigationView.setNavigationItemSelectedListener(this);
         mNavigationView.setCheckedItem(R.id.nav_home);
 
-        LinearLayout llNavHeader = (LinearLayout) mNavigationView.inflateHeaderView(R.layout.nav_header_main);
-        mTvName = (TextView) llNavHeader.findViewById(R.id.tv_name);
-        mImgNav = (ImageView) llNavHeader.findViewById(R.id.img_nav);
-        llNavHeader.setOnClickListener(new View.OnClickListener() {
+//        LinearLayout llNavHeader = (LinearLayout) mNavigationView.inflateHeaderView(R.layout.nav_header_main);
+        mTvName = (TextView) mNavigationView.findViewById(R.id.tv_name);
+        mImgNav = (ImageView) mNavigationView.findViewById(R.id.img_nav);
+        mNavigationView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mDrawer.closeDrawer(GravityCompat.START);
